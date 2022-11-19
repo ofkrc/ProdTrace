@@ -1,0 +1,35 @@
+﻿@using ProdTrace.Models.Classes
+@model List<Staff>
+@{
+    ViewBag.Title = "DepartmentDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Departman Detay Sayfası</h2>
+<br />
+
+<div class="heading mb-4" style="background-color:blueviolet; height:3rem;">
+   <ul style="color: white; padding-top:10px; text-align:center;">Departman Adı: @ViewBag.d</ul>
+</div>
+
+<table class="table table-hover">
+    <tr>
+        <th>Personel Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Görsel</th>
+        <th>Satışlar</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.StaffId</th>
+            <th>@x.StaffName</th>
+            <th>@x.StaffSurname</th>
+            <th>@x.StaffImage</th>
+            <th><a href="/Department/DepartmentStaffSales/@x.StaffId" class="btn btn-default" style="background-color:orangered; color:white">Satışlar</a></th>
+        </tr>
+    }
+
+</table>
