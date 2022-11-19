@@ -1,0 +1,29 @@
+﻿@model ProdTrace.Models.Classes.Staff
+@{
+    ViewBag.Title = "GetStaff";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Personel Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("UpdateStaff", "Staff", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.StaffId)
+    @Html.LabelFor(x => x.StaffName)
+    @Html.TextBoxFor(x => x.StaffName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.StaffSurname)
+    @Html.TextBoxFor(x => x.StaffSurname, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.StaffImage)
+    @Html.TextBoxFor(x => x.StaffImage, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Department)
+    @Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)ViewBag.value1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
+</div>
+
+}

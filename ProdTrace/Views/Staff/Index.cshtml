@@ -1,0 +1,34 @@
+﻿@using ProdTrace.Models.Classes
+@model List<Staff>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <td>ID</td>
+        <td>Personel Adı</td>
+        <td>Personel Soyadı</td>
+        <td>Görsel</td>
+        <td>Departman</td>
+        <td>Güncelle</td>
+        <td>Satışlar</td>
+    </tr>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.StaffId</td>
+            <td>@d.StaffName</td>
+            <td>@d.StaffSurname</td>
+            <td>@d.StaffImage</td>
+            <td>@d.Department.DepartmentName</td>
+            <td><a href="/Staff/GetStaff/@d.StaffId" class="btn btn-warning" style="color:white">Güncelle</a></td>
+            <td><a href="/Department/DepartmentStaffSales/@d.StaffId" class="btn btn-default" style="background-color:lightcoral; color:white">Detaylar</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Staff/AddStaff" class="btn btn-info">Personel Ekle</a>
+
