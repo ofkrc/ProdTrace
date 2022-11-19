@@ -14,20 +14,25 @@ namespace ProdTrace.Models.Classes
 
         [Column(TypeName = "Varchar")]
         [StringLength(15)]
+        [Required(ErrorMessage ="Bu alan boş geçilemez!")]
         public string CustomerName { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(15)]
+        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         public string CustomerSurname { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(15)]
+        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         public string CustomerCountry { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(40)]
+        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         public string CustomerMail { get; set; }
 
+        public bool Status { get; set; }
         //Relationships
         public ICollection<SalesMovement> SalesMovements { get; set; }
     }

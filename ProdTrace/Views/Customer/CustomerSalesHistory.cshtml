@@ -1,0 +1,38 @@
+﻿@using ProdTrace.Models.Classes
+@model List<SalesMovement>
+@{
+    ViewBag.Title = "CustomerSalesHistory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Satış Geçmişi</h2>
+<br />
+<div class="heading mb-4" style="background-color:blueviolet; height:3rem;">
+    <ul style="color: white; padding-top:10px; text-align:center;"> Cari Adı: @ViewBag.customer</ul>
+</div>
+<table class="table table-condensed">
+    <tr>
+        <td>Satış Id</td>
+        <td>Ürün</td>
+        <td>Personel</td>
+        <td>Fiyat</td>
+        <td>Adet</td>
+        <td>Toplam Fiyat</td>
+        <td>Tarih</td>
+        <td>Yazdır</td>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SalesId</td>
+            <td>@x.Product.ProductName</td>
+            <td>@x.Staff.StaffName @x.Staff.StaffSurname</td>
+            <td>@x.Price</td>
+            <td>@x.Piece</td>
+            <td>@x.TotalPrice</td>
+            <td>@x.Date</td>
+            <td><a href="#" class="btn btn-default" style="background-color:dodgerblue">Yazdır</a> </td>
+        </tr>
+    }
+</table>
