@@ -70,5 +70,10 @@ namespace ProdTrace.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult ProductList()
+        {
+            var value = c.Products.ToList();
+            return View(value);
+        }
     }
 }
