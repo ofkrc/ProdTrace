@@ -1,0 +1,41 @@
+﻿@using ProdTrace.Models.Classes
+@model List<Invoice>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr style="font-weight:bold">
+        <td>ID</td>
+        <td>Seri No</td>
+        <td>Sıra No</td>
+        <td>Vergi Dairesi</td>
+        <td>Tarih</td>
+        <td>Saat</td>
+        <td>Teslim Eden</td>
+        <td>Teslim Alan</td>
+        <td>Toplam</td>
+        <td>Güncelle</td>
+        <td>Detaylar</td>
+    </tr>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.InvoiceId</td>
+            <td>@d.InvoiceSerialNo</td>
+            <td>@d.InvoiceSequenceNo</td>
+            <td>@d.InvoiceTaxAuthority</td>
+            <td>@d.InvoiceDate</td>
+            <td>@d.InvoiceHour</td>
+            <td>@d.DeliveryFrom</td>
+            <td>@d.DeliveryTo</td>
+            <td>@d.TotalPrice</td>
+            <td><a href="/Invoice/GetInvoice/@d.InvoiceId" class="btn btn-warning" style="color:white">Güncelle</a></td>
+            <td><a href="/Invoice/InvoiceDetail/@d.InvoiceId" class="btn btn-default" style="background-color:lightcoral; color:white">Detaylar</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Invoice/AddInvoice" class="btn btn-info">Yeni Fatura Gir</a>

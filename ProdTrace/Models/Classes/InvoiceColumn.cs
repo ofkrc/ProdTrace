@@ -17,9 +17,10 @@ namespace ProdTrace.Models.Classes
         public string Description { get; set; }
         public decimal Amount { get; set; } //Miktar
         public decimal UnitPrice { get; set; } //Birim Fiyatı
-        public decimal TotalPrice { get; set; } //Toplam Fiyatı - Tutar
+        public decimal TotalPrice { get; set; } //Toplam Fiyatı - Tutar       
 
         //Relationships
-        public Invoice Invoice { get; set; }
+        public int InvoiceId { get; set; }
+        public virtual Invoice Invoice { get; set; }
     }
 }
