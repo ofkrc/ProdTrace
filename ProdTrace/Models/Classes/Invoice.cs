@@ -21,7 +21,10 @@ namespace ProdTrace.Models.Classes
         public string InvoiceSequenceNo { get; set; } //Fatura Sıra no
 
         public DateTime InvoiceDate { get; set; }
-        public DateTime InvoiceHour { get; set; }
+
+        [Column(TypeName = "Char")]
+        [StringLength(5)]
+        public string InvoiceHour { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(60)]
@@ -34,6 +37,8 @@ namespace ProdTrace.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string DeliveryTo { get; set; } //Teslim alan
+
+        public decimal TotalPrice { get; set; }
 
         //Relationships
         public ICollection<InvoiceColumn> InvoiceColumns { get; set; }

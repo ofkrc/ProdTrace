@@ -131,6 +131,7 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SalesMovementController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
@@ -466,6 +467,11 @@
     <Content Include="Views\SalesMovement\GetSales.cshtml" />
     <Content Include="Views\SalesMovement\SalesDetail.cshtml" />
     <Content Include="Views\Product\ProductList.cshtml" />
+    <Content Include="Views\Invoice\Index.cshtml" />
+    <Content Include="Views\Invoice\AddInvoice.cshtml" />
+    <Content Include="Views\Invoice\GetInvoice.cshtml" />
+    <Content Include="Views\Invoice\InvoiceDetail.cshtml" />
+    <Content Include="Views\Invoice\AddInvoiceColumn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
